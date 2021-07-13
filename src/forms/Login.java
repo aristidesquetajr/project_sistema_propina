@@ -95,14 +95,14 @@ public class Login extends javax.swing.JFrame {
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
         // TODO add your handling code here:
-        Utilizador ut = new Utilizador();
-        UtilizadorDAO utDAO = new UtilizadorDAO();
+        Utilizador utilizador = new Utilizador();
+        UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
         String user = this.txtUser.getText();
         String pass = this.txtPass.getText();
-        ut.setUsername(user);
-        ut.setPassword(pass);
+        utilizador.setUsername(user);
+        utilizador.setPassword(pass);
 
-        if(utDAO.getAccess(ut)) {
+        if(utilizadorDAO.getAccess(utilizador)) {
             this.setVisible(false);
             new Painel().setVisible(true);
         } else {

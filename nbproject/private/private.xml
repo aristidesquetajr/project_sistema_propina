@@ -5,6 +5,9 @@
         <group>
             <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/forms/Painel.java</file>
             <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/sistemapropina/SistemaPropina.java</file>
+            <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/dao/UtilizadorDAO.java</file>
+            <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/conexao/Conexao.java</file>
+            <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/beans/Aluno.java</file>
             <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/forms/Config.java</file>
             <file>file:/home/kashiki/NetBeansProjects/1_IMPTEL/SistemaPropina/src/forms/Login.java</file>
         </group>

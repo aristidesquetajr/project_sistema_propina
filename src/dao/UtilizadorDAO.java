@@ -18,7 +18,7 @@ public class UtilizadorDAO {
     
     public boolean getAccess(Utilizador user) {
         try{
-            String sql = "SELECT * FROM Utilizador WHERE username = ? AND password = ?";
+            String sql = "SELECT * FROM Utilizador WHERE username = ? AND password = md5(?)";
             PreparedStatement stmt = this.conn.prepareStatement(sql);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getPassword());
