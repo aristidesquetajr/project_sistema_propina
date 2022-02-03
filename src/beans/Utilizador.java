@@ -4,7 +4,7 @@ package beans;
  *
  * @author kashiki
  */
-class Utilizador {
+public class Utilizador {
     private int idUtilizador;
     private Funcionario fkFuncionario;
     private String username;

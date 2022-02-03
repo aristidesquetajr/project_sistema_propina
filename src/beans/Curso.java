@@ -4,7 +4,7 @@ package beans;
  *
  * @author kashiki
  */
-class Curso {
+ public class Curso {
     private int idCurso;
     private String curso;
 

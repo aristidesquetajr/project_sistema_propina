@@ -1,6 +1,7 @@
 package sistemapropina;
 
-import conexao.Conexao;
+import forms.Login;
+import forms.Painel;
 
 /**
  *
@@ -10,8 +11,7 @@ public class SistemaPropina {
 
     public static void main(String[] args) {
         // TODO code application logic here
-        Conexao c = new Conexao();
-        c.getConnection();
+        new Painel().setVisible(true);
     }
     
 }

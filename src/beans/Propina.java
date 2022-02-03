@@ -4,7 +4,7 @@ package beans;
  *
  * @author kashiki
  */
-class Propina {
+public class Propina {
     private int idPropina;
     private Aluno fkAluno;
     private Utilizador fkUtilizador;

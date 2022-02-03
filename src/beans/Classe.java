@@ -4,7 +4,7 @@ package beans;
  *
  * @author kashiki
  */
-class Classe {
+public class Classe {
     private int idClasse;
     private Curso fkCurso;
     private int classe;
