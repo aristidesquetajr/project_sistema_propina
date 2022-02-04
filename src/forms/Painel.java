@@ -29,7 +29,7 @@ public class Painel extends javax.swing.JFrame {
 
         btnPagamento = new javax.swing.JButton();
         btnConfiguracoes = new javax.swing.JButton();
-        btnConsultas = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
@@ -40,13 +40,18 @@ public class Painel extends javax.swing.JFrame {
 
         btnPagamento.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnPagamento.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/money-check-alt.png"))); // NOI18N
-        btnPagamento.setText("Pagamentos");
+        btnPagamento.setText("Pagamento");
         btnPagamento.setBorder(null);
         btnPagamento.setContentAreaFilled(false);
         btnPagamento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnPagamento.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         btnPagamento.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnPagamento.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnPagamento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagamentoActionPerformed(evt);
+            }
+        });
 
         btnConfiguracoes.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnConfiguracoes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cog.png"))); // NOI18N
@@ -63,18 +68,18 @@ public class Painel extends javax.swing.JFrame {
             }
         });
 
-        btnConsultas.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnConsultas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/search.png"))); // NOI18N
-        btnConsultas.setText("Consultas");
-        btnConsultas.setBorder(null);
-        btnConsultas.setContentAreaFilled(false);
-        btnConsultas.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnConsultas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnConsultas.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnConsultas.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnConsultas.addActionListener(new java.awt.event.ActionListener() {
+        btnConsultar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnConsultar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/search.png"))); // NOI18N
+        btnConsultar.setText("Consultar");
+        btnConsultar.setBorder(null);
+        btnConsultar.setContentAreaFilled(false);
+        btnConsultar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnConsultar.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnConsultar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnConsultar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultasActionPerformed(evt);
+                btnConsultarActionPerformed(evt);
             }
         });
 
@@ -104,27 +109,40 @@ public class Painel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnPagamento)
-                        .addGap(61, 61, 61)
-                        .addComponent(btnConsultas))
+                    .addComponent(btnPagamento)
                     .addComponent(btnConfiguracoes))
+                .addGap(61, 61, 61)
+                .addComponent(btnConsultar)
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
+                .addContainerGap(33, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnConsultas)
-                    .addComponent(btnPagamento))
-                .addGap(17, 17, 17)
-                .addComponent(btnConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnConsultar)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnPagamento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(21, 21, 21))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Pagamento().setVisible(true);
+    }//GEN-LAST:event_btnPagamentoActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        new Consultar().setVisible(true);
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
         // TODO add your handling code here:
@@ -132,11 +150,8 @@ public class Painel extends javax.swing.JFrame {
 
     private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
-
-    private void btnConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnConsultasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -175,7 +190,7 @@ public class Painel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConfiguracoes;
-    private javax.swing.JButton btnConsultas;
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnPagamento;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
