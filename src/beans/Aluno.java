@@ -9,7 +9,7 @@ public class Aluno {
     private Pessoa fkPessoa;
     private Classe fkClasse;
     private int numProcesso;
-    private int numEstudantes;
+    private int numEstudante;
 
     public int getIdAluno() {
         return idAluno;
@@ -43,11 +43,11 @@ public class Aluno {
         this.numProcesso = numProcesso;
     }
 
-    public int getNumEstudantes() {
-        return numEstudantes;
+    public int getNumEstudante() {
+        return numEstudante;
     }
 
-    public void setNumEstudantes(int numEstudantes) {
-        this.numEstudantes = numEstudantes;
+    public void setNumEstudantes(int numEstudante) {
+        this.numEstudante = numEstudante;
     }
 }

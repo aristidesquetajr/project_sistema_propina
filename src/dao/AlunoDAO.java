@@ -24,7 +24,7 @@ public class AlunoDAO {
             stmt.setInt(1, pessoa.getIdPessoa());
             stmt.setInt(2, classe.getIdClasse());
             stmt.setInt(3, aluno.getNumProcesso());
-            stmt.setInt(4, aluno.getNumEstudantes());
+            stmt.setInt(4, aluno.getNumEstudante());
             return stmt.execute();
         } catch(SQLException e) {
             System.out.println("Erro no cadastro: " + e.getMessage());
