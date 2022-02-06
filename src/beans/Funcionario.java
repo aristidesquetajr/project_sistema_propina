@@ -1,9 +1,5 @@
 package beans;
 
-/**
- *
- * @author kashiki
- */
 public class Funcionario {
     private int idFuncionario;
     private Pessoa fkPessoa;

@@ -1,9 +1,5 @@
 package beans;
 
-/**
- *
- * @author kashiki
- */
  public class Curso {
     private int idCurso;
     private String curso;

@@ -1,9 +1,5 @@
 package beans;
 
-/**
- *
- * @author kashiki
- */
 public class Mensalidade {
     private int idMensalidade;
     private Propina fkPropina;

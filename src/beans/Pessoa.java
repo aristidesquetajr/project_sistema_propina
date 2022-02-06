@@ -1,11 +1,7 @@
 package beans;
 
-import java.util.Date;
+import java.sql.Date;
 
-/**
- *
- * @author kashiki
- */
 public class Pessoa {
     private int idPessoa;
     private String nome;

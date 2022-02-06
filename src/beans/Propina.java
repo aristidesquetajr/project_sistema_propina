@@ -1,16 +1,11 @@
 package beans;
 
-/**
- *
- * @author kashiki
- */
 public class Propina {
     private int idPropina;
     private Aluno fkAluno;
     private Utilizador fkUtilizador;
     private float val;
-    private int multa;
-
+    
     public int getIdPropina() {
         return idPropina;
     }
@@ -42,14 +37,5 @@ public class Propina {
     public void setVal(float val) {
         this.val = val;
     }
-
-    public int getMulta() {
-        return multa;
-    }
-
-    public void setMulta(int multa) {
-        this.multa = multa;
-    }
-    
     
 }
