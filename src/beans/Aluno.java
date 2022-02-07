@@ -43,7 +43,7 @@ public class Aluno {
         return numEstudante;
     }
 
-    public void setNumEstudantes(int numEstudante) {
+    public void setNumEstudante(int numEstudante) {
         this.numEstudante = numEstudante;
     }
 }

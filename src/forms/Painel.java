@@ -30,10 +30,6 @@ public class Painel extends javax.swing.JFrame {
         btnPagamento = new javax.swing.JButton();
         btnConfiguracoes = new javax.swing.JButton();
         btnConsultar = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -83,48 +79,31 @@ public class Painel extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
-
-        jRadioButtonMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Quit");
-        jRadioButtonMenuItem1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonMenuItem1ActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jRadioButtonMenuItem1);
-
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("About");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnPagamento)
-                    .addComponent(btnConfiguracoes))
-                .addGap(61, 61, 61)
-                .addComponent(btnConsultar)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(btnPagamento)
+                        .addGap(61, 61, 61)
+                        .addComponent(btnConsultar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(129, 129, 129)
+                        .addComponent(btnConfiguracoes)))
                 .addContainerGap(51, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(52, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnConsultar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnPagamento)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnPagamento))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnConfiguracoes, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
 
@@ -133,25 +112,18 @@ public class Painel extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPagamentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagamentoActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
         new Pagamento().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnPagamentoActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
         new Consultar().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_btnConsultarActionPerformed
 
     private void btnConfiguracoesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfiguracoesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConfiguracoesActionPerformed
-
-    private void jRadioButtonMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonMenuItem1ActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jRadioButtonMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -192,9 +164,5 @@ public class Painel extends javax.swing.JFrame {
     private javax.swing.JButton btnConfiguracoes;
     private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnPagamento;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     // End of variables declaration//GEN-END:variables
 }
