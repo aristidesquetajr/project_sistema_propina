@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
-/**
- *
- * @author kashiki
- */
+import conexao.Conexao;
+import java.sql.Connection;
+
 public class CursoDAO {
+    private Conexao conexao;
+    private Connection conn;
     
+    public CursoDAO() {
+        this.conexao = new Conexao();
+        this.conn = this.conexao.getConnection();
+    }
 }
