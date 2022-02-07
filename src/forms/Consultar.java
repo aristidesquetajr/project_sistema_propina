@@ -5,6 +5,10 @@
  */
 package forms;
 
+import beans.Curso;
+import dao.CursoDAO;
+import java.util.List;
+
 /**
  *
  * @author kashiki
@@ -16,8 +20,17 @@ public class Consultar extends javax.swing.JFrame {
      */
     public Consultar() {
         initComponents();
+        showCursosComboBox();
     }
 
+    private void showCursosComboBox() {
+        CursoDAO cursoDAO = new CursoDAO();
+        List<Curso> listCursos = cursoDAO.getCursos();
+        listCursos.forEach((curso) -> {
+            this.cmbCurso.addItem(curso);
+        });
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,7 +51,7 @@ public class Consultar extends javax.swing.JFrame {
         cmbSala = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         btnPesquisar = new javax.swing.JButton();
-        cmbCurso = new javax.swing.JComboBox<>();
+        cmbCurso = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setName("frmPagamento"); // NOI18N
@@ -90,8 +103,6 @@ public class Consultar extends javax.swing.JFrame {
         binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, this, org.jdesktop.beansbinding.ELProperty.create("${font}"), btnPesquisar, org.jdesktop.beansbinding.BeanProperty.create("font"));
         bindingGroup.addBinding(binding);
 
-        cmbCurso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Informatica", "Telecomunicaçoes" }));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -110,8 +121,8 @@ public class Consultar extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cmbCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(cmbCurso, 0, 153, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cmbSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,7 +199,7 @@ public class Consultar extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPesquisar;
-    private javax.swing.JComboBox<String> cmbCurso;
+    private javax.swing.JComboBox cmbCurso;
     private javax.swing.JComboBox<String> cmbSala;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

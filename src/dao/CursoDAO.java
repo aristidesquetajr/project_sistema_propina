@@ -31,7 +31,7 @@ public class CursoDAO {
     }
     
     public List<Curso> getCursos() {
-        this.sql = "SELECT * FROM Curso";
+        this.sql = "SELECT * FROM Curso ORDER BY curso";
         try {
             this.stmt = this.conn.prepareStatement(this.sql);
             ResultSet res = this.stmt.executeQuery();
@@ -40,11 +40,12 @@ public class CursoDAO {
             while(res.next()) {
                 Curso curso = new Curso();
                 curso.setIdCurso(res.getInt("idCurso"));
+                curso.setCurso(res.getString("curso"));
                 listCursos.add(curso);
             }
             
             return listCursos;
-        } catch (Exception e) {
+        } catch (SQLException e) {
             return null;
         }
     }
