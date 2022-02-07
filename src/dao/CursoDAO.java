@@ -4,7 +4,10 @@ import beans.Curso;
 import conexao.Conexao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CursoDAO {
     private Conexao conexao;
@@ -24,6 +27,25 @@ public class CursoDAO {
             this.stmt.setString(1, curso.getCurso());
         } catch (SQLException e) {
             System.out.println("Erro no cadastro do curso: " + e.getMessage());
+        }
+    }
+    
+    public List<Curso> getCursos() {
+        this.sql = "SELECT * FROM Curso";
+        try {
+            this.stmt = this.conn.prepareStatement(this.sql);
+            ResultSet res = this.stmt.executeQuery();
+            
+            List<Curso> listCursos = new ArrayList<>();
+            while(res.next()) {
+                Curso curso = new Curso();
+                curso.setIdCurso(res.getInt("idCurso"));
+                listCursos.add(curso);
+            }
+            
+            return listCursos;
+        } catch (Exception e) {
+            return null;
         }
     }
 }
