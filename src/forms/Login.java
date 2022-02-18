@@ -1,7 +1,13 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package forms;
 
 import beans.Utilizador;
 import dao.UtilizadorDAO;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
@@ -25,91 +31,161 @@ public class Login extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
+        bg = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
         txtPass = new javax.swing.JPasswordField();
+        jSeparator2 = new javax.swing.JSeparator();
         btnLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Login");
-        setLocation(new java.awt.Point(300, 100));
+        setTitle("Gestao - Login");
         setResizable(false);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel1.setText("Username:");
+        bg.setBackground(new java.awt.Color(93, 126, 252));
+        bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel2.setText("Password:");
+        jLabel1.setFont(new java.awt.Font("Roboto Slab", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("SGP");
+        bg.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, -1, -1));
 
-        txtUser.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setText("Usuario:");
+        bg.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        txtPass.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Senha:");
+        bg.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
 
-        btnLogin.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        txtUser.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(204, 204, 204));
+        txtUser.setBorder(null);
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, bg, org.jdesktop.beansbinding.ELProperty.create("${background}"), txtUser, org.jdesktop.beansbinding.BeanProperty.create("background"));
+        bindingGroup.addBinding(binding);
+
+        txtUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtUserMousePressed(evt);
+            }
+        });
+        bg.add(txtUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 400, 30));
+        bg.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 400, -1));
+
+        txtPass.setFont(txtUser.getFont());
+        txtPass.setForeground(new java.awt.Color(204, 204, 204));
+        txtPass.setText("********");
+        txtPass.setBorder(null);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, bg, org.jdesktop.beansbinding.ELProperty.create("${background}"), txtPass, org.jdesktop.beansbinding.BeanProperty.create("background"));
+        bindingGroup.addBinding(binding);
+
+        txtPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtPassMousePressed(evt);
+            }
+        });
+        bg.add(txtPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 400, 30));
+        bg.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 400, -1));
+
+        btnLogin.setBackground(new java.awt.Color(40, 114, 206));
+        btnLogin.setFont(new java.awt.Font("Roboto Medium", 1, 14)); // NOI18N
+        btnLogin.setForeground(new java.awt.Color(255, 255, 255));
         btnLogin.setText("Login");
+        btnLogin.setBorder(null);
+        btnLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnLoginMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnLoginMouseEntered(evt);
+            }
+        });
         btnLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoginActionPerformed(evt);
             }
         });
+        bg.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 120, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 208, Short.MAX_VALUE)
-                    .addComponent(txtPass))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(114, Short.MAX_VALUE)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38)
-                .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        bindingGroup.bind();
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
         Utilizador utilizador = new Utilizador();
         UtilizadorDAO utilizadorDAO = new UtilizadorDAO();
         String user = this.txtUser.getText();
-        String pass = this.txtPass.getText();
+        String pass = String.valueOf(this.txtPass.getPassword());
         utilizador.setUsername(user);
         utilizador.setPassword(pass);
 
         if(utilizadorDAO.getAccess(utilizador)) {
             this.setVisible(false);
-            new Painel().setVisible(true);
+            new MainPainel().setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "username or password incorrect");
         }
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void txtUserMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserMousePressed
+        if (this.txtUser.getText().equals("insira o seu nome de usuario")) {
+            this.txtUser.setText("");
+            this.txtUser.setForeground(Color.white);
+        }
+
+        if(String.valueOf(this.txtPass.getPassword()).isEmpty()) {
+            this.txtPass.setText("********");
+            this.txtPass.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtUserMousePressed
+
+    private void txtPassMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtPassMousePressed
+        if (String.valueOf(this.txtPass.getPassword()).equals("********")) {
+            this.txtPass.setText("");
+            this.txtPass.setForeground(Color.white);
+        }
+
+        if (this.txtUser.getText().isEmpty()) {
+            this.txtUser.setText("insira o seu nome de usuario");
+            this.txtUser.setForeground(Color.gray);
+        }
+    }//GEN-LAST:event_txtPassMousePressed
+
+    private void btnLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseEntered
+        // TODO add your handling code here:
+        this.btnLogin.setBackground(new Color(40,110,195));
+    }//GEN-LAST:event_btnLoginMouseEntered
+
+    private void btnLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLoginMouseExited
+        this.btnLogin.setBackground(new Color(40,114,206));
+    }//GEN-LAST:event_btnLoginMouseExited
 
     /**
      * @param args the command line arguments
@@ -147,10 +223,15 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel bg;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JPasswordField txtPass;
     private javax.swing.JTextField txtUser;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }

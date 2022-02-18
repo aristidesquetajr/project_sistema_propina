@@ -16,12 +16,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author kashiki
  */
-public class Consultar extends javax.swing.JFrame {
+public class Consultarrr extends javax.swing.JFrame {
 
     /**
      * Creates new form Consultar
      */
-    public Consultar() {
+    public Consultarrr() {
         initComponents();
         CursoDAO.showCursosComboBox(cmbCurso);
         showAlunosTable();
@@ -171,7 +171,7 @@ public class Consultar extends javax.swing.JFrame {
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
         // TODO add your handling code here:
-        new Painel().setVisible(true);
+        
     }//GEN-LAST:event_formWindowClosing
 
     /**
@@ -191,21 +191,22 @@ public class Consultar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consultarrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consultarrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consultarrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Consultar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Consultarrr.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new Consultar().setVisible(true);
+                new Consultarrr().setVisible(true);
             }
         });
     }

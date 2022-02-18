@@ -28,14 +28,16 @@ public class CursoDAO {
         });
     }
     
-    public void createdCurso(Curso curso) {
+    public Boolean createdCurso(Curso curso) {
         this.sql = "INSERT INTO Curso (curso) VALUES (?)";
         try {
             this.stmt = this.conn.prepareStatement(this.sql);
             this.stmt.setString(1, curso.getCurso());
+            return this.stmt.execute();
         } catch (SQLException e) {
             System.out.println("Erro no cadastro do curso: " + e.getMessage());
         }
+        return false;
     }
     
     public List<Curso> getCursos() {
@@ -54,6 +56,7 @@ public class CursoDAO {
             
             return listCursos;
         } catch (SQLException e) {
+            System.out.println("Erro na obtençao dos dados: " + e.getMessage());
             return null;
         }
     }
